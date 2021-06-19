@@ -7,24 +7,28 @@ const styleCard = {
   height: "30%",
 };
 
-const Pokecard = ({ id, sprite, name }) => {
+const Pokecardequipo = ({ pokemon }) => {
   //dispatch
   const dispatch = useDispatch();
   return (
-    <div className="card" style={styleCard} key={id}>
-      <img src={sprite} className="card-img-top" alt="..." />
+    <div className="card" style={styleCard} key={pokemon.id}>
+      <img
+        src={pokemon.sprites.front_default}
+        className="card-img-top"
+        alt="..."
+      />
       <div className="card-body text-center">
-        <p>{name}</p>
+        <p>{pokemon.name}</p>
         <button
           className="btn btn-primary"
           // style={{ width: "90%", height: "10%" }}
-          onClick={() => dispatch({ type: "AGREGAR_AL_EQUIPO", id })}
+          onClick={() => dispatch({ type: "QUITAR_DEL_EQUIPO", pokemon })}
         >
-          Agregar
+          Quitar
         </button>
       </div>
     </div>
   );
 };
 
-export default Pokecard;
+export default Pokecardequipo;
