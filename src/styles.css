@@ -1,0 +1,30 @@
+body {
+  background-color: #e4727b;
+  color: #f3f3f3;
+  font-family: "VT323", monospace;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.pokecard__card {
+  width: 150px;
+  height: 250px;
+  background-color: #e62737;
+  border-radius: 10px;
+}
+
+.pokecard__btn {
+  background-color: #d3d3d3;
+  border: none;
+  color: #8d1721;
+}
+
+.pokecard__btn:hover {
+  background-color: #e4727b;
+}

@@ -1,17 +1,14 @@
 import React from "react";
+//Importamos el Dispatch de react-redux, para enviar datos a la Store
 import { useDispatch } from "react-redux";
 
-//style para la card, provisorio
-const styleCard = {
-  width: "200px",
-  height: "30%",
-};
-
 const Pokecardequipo = ({ pokemon }) => {
-  //dispatch
+  //Guardamos el dispatch en una variable, para mayor legibilidad
   const dispatch = useDispatch();
+
+  //Componente
   return (
-    <div className="card" style={styleCard} key={pokemon.id}>
+    <div className="container m-2 p-2 pokecard__card" key={pokemon.id}>
       <img
         src={pokemon.sprites.front_default}
         className="card-img-top"
@@ -20,9 +17,9 @@ const Pokecardequipo = ({ pokemon }) => {
       <div className="card-body text-center">
         <p>{pokemon.name}</p>
         <button
-          className="btn btn-primary"
-          // style={{ width: "90%", height: "10%" }}
+          className="btn btn-primary pokecard__btn"
           onClick={() => dispatch({ type: "QUITAR_DEL_EQUIPO", pokemon })}
+          //Éste dispatch mueve un elemento de "equipo" a "pokemons" en la Store
         >
           Quitar
         </button>
